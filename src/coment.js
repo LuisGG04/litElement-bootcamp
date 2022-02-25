@@ -1,7 +1,6 @@
 import { html, LitElement } from "lit-element";
-import './pots';
 
-class Container extends LitElement {
+export default class Container extends LitElement {
 
     static get properties(){
         return {
@@ -38,16 +37,6 @@ class Container extends LitElement {
 
     render(){
         return html`
-
-            <post-container 
-                userName="LuisGG"
-                title=""
-                body=""
-                date="2022"
-                avatar="./src/assets/user.svg"
-                menuIcon="./src/assets/more.svg"
-                @data-submit="${this.handleSubmit}"
-            ></post-container>
 
             <link href="./node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
             <link href="./src/styles/components.css" rel="stylesheet">
