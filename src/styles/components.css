@@ -1,0 +1,11 @@
+.icon-card{
+    cursor: pointer;
+}
+
+.move__card__icon{
+    transform: translateX(60px) rotate(-180deg);
+}
+
+.input__file{
+    width: 157px;
+}
