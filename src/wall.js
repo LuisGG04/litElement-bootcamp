@@ -24,8 +24,6 @@ class Wall extends LitElement{
         this.posts.push(detail);
         this.posts = JSON.parse(JSON.stringify(this.posts));
 
-        console.log(this.posts);
-
     }
 
     render(){
