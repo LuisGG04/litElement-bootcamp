@@ -25,16 +25,6 @@ export default class Container extends LitElement {
 
     }
 
-    handleSubmit(e){
-        e.preventDefault();
-        this.title = e.detail.title;
-        this.body = e.detail.body;
-    }
-
-    handleInput(e){
-        this.title = e.target.value;
-    }
-
     render(){
         return html`
 

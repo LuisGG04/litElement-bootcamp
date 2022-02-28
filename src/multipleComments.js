@@ -10,9 +10,10 @@ export default class MultipleComments extends LitElement {
     }
 
     constructor(){
-        super()
 
-        this.posts = []
+        super();
+
+        this.posts = [];
 
     }
 
@@ -23,10 +24,8 @@ export default class MultipleComments extends LitElement {
 
                 ${this.posts.map(post => html`
                     <container-coment 
-                        userName="${post.userName}"
                         title="${post.title}"
-                        body="${post.body}"
-                        date="${post.date}">
+                        body="${post.body}">
                     </container-coment>
                 `)}
 

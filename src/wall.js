@@ -17,8 +17,15 @@ class Wall extends LitElement{
 
     }
 
-    handleData(){
-        // this.posts.push()
+    handleData(e){
+
+        const detail = e.detail;
+
+        this.posts.push(detail);
+        this.posts = JSON.parse(JSON.stringify(this.posts));
+
+        console.log(this.posts);
+
     }
 
     render(){
@@ -38,4 +45,4 @@ class Wall extends LitElement{
 
 }
 
-customElements.define("wall", Wall)
+customElements.define("wall-container", Wall)
