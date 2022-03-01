@@ -1,12 +1,14 @@
 import { html, LitElement } from "lit-element";
-import './multipleComments';
-import './pots';
+import './components/multipleComments';
+import './components/pots';
+import GetPosts from './helpers/getPosts';
 
 class Wall extends LitElement{
 
     static get properties(){
         return{
-            posts: {type : Array}
+            posts: {type : Array},
+            _dmGetPosts: {type : Object}
         }
     }
 
@@ -14,19 +16,29 @@ class Wall extends LitElement{
 
         super()
         this.posts = []
+        this._dmGetPosts = new GetPosts();
 
     }
 
     handleData(e){
 
         const detail = e.detail;
-
-        this.posts.push(detail);
-        this.posts = JSON.parse(JSON.stringify(this.posts));
+        this._dmGetPosts.addEventListener("success-call", this._setPosts.bind(this));
+        this._dmGetPosts.addEventListener("error-call", this._showModalError.bind(this));
+        this._dmGetPosts.getPosts();
 
     }
 
+    _showModalError(configError){
+        this.errorModal = configError
+    }
+
+    _setPosts(data){
+        this.posts = data.detail
+    }
+
     render(){
+
         return html`
         
         <post-container 
